@@ -1,11 +1,11 @@
-package com.bk.jwtsecurity.service.impl;
+package com.bk.jwtsecurity.user.service.impl;
 
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.bk.jwtsecurity.model.User;
-import com.bk.jwtsecurity.repo.UserRepository;
-import com.bk.jwtsecurity.service.api.UserService;
+import com.bk.jwtsecurity.user.model.User;
+import com.bk.jwtsecurity.user.repo.UserRepository;
+import com.bk.jwtsecurity.user.service.api.UserService;
 
 import lombok.RequiredArgsConstructor;
 

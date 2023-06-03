@@ -1,6 +1,6 @@
-package com.bk.jwtsecurity.model;
+package com.bk.jwtsecurity.user.model;
 
-import com.bk.jwtsecurity.enumeration.Role;
+import com.bk.jwtsecurity.user.enumeration.Role;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -29,7 +29,6 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
-
     @Enumerated(EnumType.STRING)
     private Role role;
 }

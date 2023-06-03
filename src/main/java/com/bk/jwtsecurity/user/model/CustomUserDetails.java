@@ -1,4 +1,4 @@
-package com.bk.jwtsecurity.model;
+package com.bk.jwtsecurity.user.model;
 
 import java.util.Collection;
 import java.util.List;

@@ -1,11 +1,11 @@
-package com.bk.jwtsecurity.repo;
+package com.bk.jwtsecurity.user.repo;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bk.jwtsecurity.model.User;
+import com.bk.jwtsecurity.user.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {

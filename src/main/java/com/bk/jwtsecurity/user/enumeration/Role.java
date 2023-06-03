@@ -1,4 +1,4 @@
-package com.bk.jwtsecurity.enumeration;
+package com.bk.jwtsecurity.user.enumeration;
 
 public enum Role {
     ADMIN, USER, GUEST;
