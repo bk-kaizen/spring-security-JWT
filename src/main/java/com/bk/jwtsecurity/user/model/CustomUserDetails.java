@@ -29,7 +29,7 @@ public class CustomUserDetails implements UserDetails {
     public CustomUserDetails(User user) {
         userName = user.getFirstName();
         password = user.getPassword();
-        authorities = List.of(new SimpleGrantedAuthority(user.getRoles().name()));
+        authorities = List.of(new SimpleGrantedAuthority(user.getRole().name()));
 
     }
 
