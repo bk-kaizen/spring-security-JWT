@@ -5,4 +5,6 @@ import com.bk.jwtsecurity.user.model.User;
 public interface UserService {
 
     public User retrieveUserByEmail(String email);
+
+    public User saveUser(User user);
 }
