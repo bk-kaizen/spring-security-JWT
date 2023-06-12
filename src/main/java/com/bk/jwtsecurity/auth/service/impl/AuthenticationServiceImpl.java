@@ -1,6 +1,7 @@
 package com.bk.jwtsecurity.auth.service.impl;
 
 import java.io.IOException;
+import java.util.Optional;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -35,7 +36,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final AuthenticationManager authenticationManager;
 
     @Override
-    public AuthenticationResponse register(RegisterRequest request) {
+    public AuthenticationResponse register(RegisterRequest request) throws Exception {
+        Optional<User> optionalUser = userService.retrieveUserByEmail(request.getEmail());
+        if (optionalUser.isPresent()) {
+            throw new Exception("user exists!");
+        }
+
         var user = User.builder().firstName(request.getFirstname()).lastName(request.getLastname())
                 .email(request.getEmail()).password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole()).build();
@@ -54,6 +60,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
             var refreshToken = jwtService.generateRefreshToken(request.getEmail());
             return AuthenticationResponse.builder().accessToken(jwtToken).refreshToken(refreshToken).build();
         } else {
+            System.out.println("NOT AUTHENTICATED!");
             throw new UsernameNotFoundException("user not found!");
         }
 

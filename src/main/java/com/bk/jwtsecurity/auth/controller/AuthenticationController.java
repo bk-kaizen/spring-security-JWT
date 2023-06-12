@@ -12,10 +12,9 @@ import com.bk.jwtsecurity.auth.dto.AuthenticationResponse;
 import com.bk.jwtsecurity.auth.dto.RegisterRequest;
 import com.bk.jwtsecurity.auth.service.api.AuthenticationService;
 
-import lombok.RequiredArgsConstructor;
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 
 /**
  * Controller class for handling authentication-related endpoints.
@@ -32,7 +31,7 @@ public class AuthenticationController {
      * @return         the authentication response
      */
     @PostMapping("/register")
-    public AuthenticationResponse register(@RequestBody RegisterRequest request) {
+    public AuthenticationResponse register(@RequestBody RegisterRequest request) throws Exception {
         return authenticationService.register(request);
     }
 

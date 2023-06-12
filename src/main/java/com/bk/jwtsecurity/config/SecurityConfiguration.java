@@ -44,7 +44,7 @@ public class SecurityConfiguration {
      */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf((csrf) -> csrf.disable()).authorizeRequests().requestMatchers("/no-auth").permitAll().anyRequest()
+        http.csrf((csrf) -> csrf.disable()).authorizeRequests().requestMatchers("/no-auth", "/api/auth/**").permitAll().anyRequest()
                 .authenticated().and()
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider())

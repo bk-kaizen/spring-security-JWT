@@ -27,7 +27,7 @@ public class CustomUserDetails implements UserDetails {
      * @param user the User object representing the user.
      */
     public CustomUserDetails(User user) {
-        userName = user.getFirstName();
+        userName = user.getEmail();
         password = user.getPassword();
         authorities = List.of(new SimpleGrantedAuthority(user.getRole().name()));
 

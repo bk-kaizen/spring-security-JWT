@@ -2,9 +2,11 @@ package com.bk.jwtsecurity.user.service.api;
 
 import com.bk.jwtsecurity.user.model.User;
 
+import java.util.Optional;
+
 public interface UserService {
 
-    public User retrieveUserByEmail(String email);
+    Optional<User> retrieveUserByEmail(String email);
 
-    public User saveUser(User user);
+    User saveUser(User user);
 }

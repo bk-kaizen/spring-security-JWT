@@ -19,7 +19,7 @@ public interface AuthenticationService {
      * @param  request the registration request containing user details
      * @return         the authentication response
      */
-    AuthenticationResponse register(RegisterRequest request);
+    AuthenticationResponse register(RegisterRequest request) throws Exception;
 
     /**
      * Authenticates a user.
